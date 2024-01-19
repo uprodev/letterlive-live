@@ -15,9 +15,9 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> d>
   <?php wp_body_open(); ?>
-  
+
   <?php if ($field = get_field('code_in_body_h', 'option')): ?>
     <?= $field ?>
   <?php endif ?>
@@ -38,7 +38,7 @@
               <?php if ($field = get_field('image_mobile_h', 'option')): ?>
                 <?= wp_get_attachment_image($field['ID'], 'full', false, array('class' => 'mob')) ?>
               <?php endif ?>
-              
+
             </a>
           </div>
         <?php endif ?>
