@@ -16,7 +16,7 @@
 </head>
 
 <body <?php body_class(); ?> d>
-  <?php wp_body_open(); ?>
+  <?php wp_body_open(); ?> 
 
   <?php if ($field = get_field('code_in_body_h', 'option')): ?>
     <?= $field ?>
