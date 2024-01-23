@@ -39,7 +39,7 @@ if($args['row']):
 
 						<div class="stars-wrap">
 
-							<?php for ($i = 0; $i < $rating_round; $i++) { ?>
+							<?php for ($i = 0; $i < $rating_floor; $i++) { ?>
 								<img src="<?= get_stylesheet_directory_uri() ?>/img/star-full.svg" alt="">
 							<?php } ?>
 

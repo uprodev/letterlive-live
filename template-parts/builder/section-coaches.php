@@ -13,7 +13,7 @@ if($args['row']):
 					<div class="swiper coach-slider">
 						<div class="swiper-wrapper">
 
-							<?php foreach ($slider as $index => $item): ?>
+							<?php foreach ($slider as $item): ?>
 								<div class="swiper-slide">
 									<div class="text">
 
@@ -22,7 +22,7 @@ if($args['row']):
 										<?php endif ?>
 										
 										<?php if ($item['photo']): ?>
-											<figure <?php if($index == 0) echo ' class="mob"' ?>>
+											<figure class="mob">
 												<?= wp_get_attachment_image($item['photo']['ID'], 'full') ?>
 
 												<?php if ($item['caption']): ?>
