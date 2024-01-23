@@ -34,7 +34,7 @@ if($args['row']):
 							<?php if ($item['answer']): ?>
 								<div class="accordion-panel">
 									<div class="wrap">
-										<p><?= $item['answer'] ?></p>
+										<?= $item['answer'] ?>
 									</div>
 								</div>
 							<?php endif ?>
