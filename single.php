@@ -26,21 +26,21 @@
 						</div>
 					<?php endif ?>
 					
-				</div>
+					<?php if (get_the_author_meta('display_name', $author_id ) || get_the_author_meta('description', $author_id )): ?>
+					<p class="name">
+
+						<?php if ($field = get_the_author_meta('display_name', $author_id )): ?>
+							<?= $field ?>
+						<?php endif ?>
+
+						<?php if ($field = get_the_author_meta('description', $author_id )): ?>
+							<span><?= $field ?></span>
+						<?php endif ?>
+
+					</p>
+				<?php endif ?>
 				
-				<?php if (get_the_author_meta('display_name', $author_id ) || get_the_author_meta('description', $author_id )): ?>
-				<p class="name">
-
-					<?php if ($field = get_the_author_meta('display_name', $author_id )): ?>
-						<?= $field ?>
-					<?php endif ?>
-
-					<?php if ($field = get_the_author_meta('description', $author_id )): ?>
-						<span><?= $field ?></span>
-					<?php endif ?>
-
-				</p>
-			<?php endif ?>
+			</div>
 
 			<?php if (get_field('form_p', 'option')): ?>
 				<div class="mail-wrap-block mail-wrap-block-mob">

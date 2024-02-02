@@ -89,7 +89,7 @@ jQuery(document).ready(function ($) {
 
 
   if(window.innerWidth > 767){
-    $(".mail-wrap-block").sticky({
+    $(".aside-right .mail-wrap-block").sticky({
       topSpacing:50
     });
   }

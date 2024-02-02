@@ -73,7 +73,7 @@ function override_mce_options($initArray) {
 }
 
 
-function custom_language_switcher(){
+function custom_language_switcher_old(){
 	$languages = icl_get_languages('skip_missing=0&orderby=id&order=desc');
 	if(!empty($languages)){
 
@@ -89,6 +89,29 @@ function custom_language_switcher(){
 		}
 
 		echo '</ul>';
+
+	}
+}
+
+
+function custom_language_switcher(){
+	$languages = icl_get_languages('skip_missing=0&orderby=id&order=desc');
+	if(!empty($languages)){
+
+		echo '<div class="lang-wrap">';
+		foreach ($languages as $index => $language) {
+			if($language['active'] === '1') echo '<a href="#">' . $language['native_name'] . '</a>';
+		}
+		echo '<ul>';
+
+		foreach($languages as $index => $language){
+
+			if($language['active'] !== '1') echo '<li><a href="' . $language['url'] . '">' . $language['native_name'] . '</a></li>';
+
+		}
+
+		echo '</ul>';
+		echo '</div>';
 
 	}
 }

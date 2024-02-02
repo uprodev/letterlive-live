@@ -26,8 +26,6 @@ if($args['row']):
 
 											<?php if ($item['photo']): ?>
 												<?= wp_get_attachment_image($item['photo']['ID'], 'full') ?>
-											<?php else: ?>
-												<img src="<?= get_stylesheet_directory_uri() ?>/img/img-10-3.svg" alt="">
 											<?php endif ?>
 
 											<?php if ($item['name']): ?>

@@ -19,7 +19,12 @@
 			<?php endforeach ?>
 		<?php endif ?>
 		
-		<li><p><?= reading_time() ?> <?php the_field('reading_p', 'option') ?></p></li>
+		<?php if ($field = get_field('reading_p', 'option')): ?>
+			<li>
+				<p><?= reading_time() ?> <?= $field ?></p>
+			</li>
+		<?php endif ?>
+		
 	</ul>
 	<h6>
 		<a href="<?php the_permalink() ?>"><?php the_title() ?></a>

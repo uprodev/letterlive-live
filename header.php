@@ -56,8 +56,12 @@
         </nav>
       </div>
       <div class="right">
+        <!-- <div class="btn-wrap">
+          <a href="#" class="btn-default btn-border">Button Link</a>
+          <a href="#" class="btn-default">Button Link</a>
+        </div> -->
 
-        <?php custom_language_switcher() ?>
+        <?php custom_language_switcher_old() ?>
 
         <div class="open-menu">
           <a href="#">
