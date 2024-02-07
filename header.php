@@ -56,12 +56,24 @@
         </nav>
       </div>
       <div class="right">
-        <!-- <div class="btn-wrap">
-          <a href="#" class="btn-default btn-border">Button Link</a>
-          <a href="#" class="btn-default">Button Link</a>
-        </div> -->
 
-        <?php custom_language_switcher_old() ?>
+        <?php if(have_rows('links_h', 'option')): ?>
+
+          <div class="btn-wrap">
+
+            <?php while(have_rows('links_h', 'option')): the_row() ?>
+
+              <?php if ($field = get_sub_field('link')): ?>
+                <a href="<?= $field['url'] ?>" class="btn-default<?php if(get_sub_field('color') == 'White') echo ' btn-border' ?>"<?php if($field['target']) echo ' target="_blank"' ?>><?= $field['title'] ?></a>
+              <?php endif ?>
+
+            <?php endwhile ?>
+
+          </div>
+
+        <?php endif ?>
+
+        <?php custom_language_switcher() ?>
 
         <div class="open-menu">
           <a href="#">
@@ -84,9 +96,26 @@
       )); ?>
 
     </nav>
+    
+    <?php if(have_rows('links_h', 'option')): ?>
+
+      <div class="btn-wrap">
+
+        <?php while(have_rows('links_h', 'option')): the_row() ?>
+
+          <?php if ($field = get_sub_field('link')): ?>
+            <a href="<?= $field['url'] ?>" class="btn-default<?php if(get_sub_field('color') == 'White') echo ' btn-border' ?>"<?php if($field['target']) echo ' target="_blank"' ?>><?= $field['title'] ?></a>
+          <?php endif ?>
+
+        <?php endwhile ?>
+
+      </div>
+
+    <?php endif ?>
+
     <div class="lang-wrap">
 
-      <?php custom_language_switcher() ?>
+      <?php custom_language_switcher_mob() ?>
 
     </div>
   </div>

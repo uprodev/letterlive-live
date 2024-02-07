@@ -17,30 +17,31 @@
 			</div>
 			<div class="share">
 
-				<div class="author-wrap">
-					<?php $author_id = get_post_field ('post_author', get_the_ID()) ?>
+				<?php if (!get_field('is_not_author') && get_field('author')): ?>
+					<div class="author-wrap">
 
-					<?php if ($field = get_field('avatar', 'user_' . $author_id)): ?>
-						<div class="img-wrap-author">
-							<?= wp_get_attachment_image($field['ID'], 'full') ?>
-						</div>
+						<?php if ($field = get_field('author')['image']): ?>
+							<div class="img-wrap-author">
+								<?= wp_get_attachment_image($field['ID'], 'full') ?>
+							</div>
+						<?php endif ?>
+
+						<?php if (get_field('author')['name'] || get_field('author')['description']): ?>
+						<p class="name">
+
+							<?php if ($field = get_field('author')['name']): ?>
+								<?= $field ?>
+							<?php endif ?>
+
+							<?php if ($field = get_field('author')['description']): ?>
+								<span><?= $field ?></span>
+							<?php endif ?>
+
+						</p>
 					<?php endif ?>
-					
-					<?php if (get_the_author_meta('display_name', $author_id ) || get_the_author_meta('description', $author_id )): ?>
-					<p class="name">
 
-						<?php if ($field = get_the_author_meta('display_name', $author_id )): ?>
-							<?= $field ?>
-						<?php endif ?>
-
-						<?php if ($field = get_the_author_meta('description', $author_id )): ?>
-							<span><?= $field ?></span>
-						<?php endif ?>
-
-					</p>
-				<?php endif ?>
-				
-			</div>
+				</div>
+			<?php endif ?>
 
 			<?php if (get_field('form_p', 'option')): ?>
 				<div class="mail-wrap-block mail-wrap-block-mob">

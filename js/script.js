@@ -123,4 +123,15 @@ jQuery(document).ready(function ($) {
     },
   });
 
+  /*02-02-24*/
+  $(document).on('click', '.top-line .lang-wrap>a', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('is-open');
+    if($(this).hasClass('is-open')){
+      $(this).closest('.lang-wrap').find('ul').slideDown()
+    }else{
+      $(this).closest('.lang-wrap').find('ul').slideUp()
+    }
+  });
+
 });

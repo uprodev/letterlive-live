@@ -2195,12 +2195,12 @@ figure img{
   border: 1px solid #000;
   min-width: 162px; }
 .top-line .btn-wrap a:hover {
-  background: #fff;
+  background: transparent;
   color: #000; }
 .top-line .btn-wrap a + a {
   margin-left: 20px; }
 .top-line .btn-wrap .btn-border {
-  background: #fff;
+  background: transparent;
   color: #000; }
 .top-line .btn-wrap .btn-border:hover {
   background: #000;
@@ -2240,9 +2240,9 @@ figure img{
   position: absolute;
   top: 100%;
   left: -10px;
-  background: #fff;
-  -webkit-box-shadow: 0px 3px 30px 4px rgba(46, 46, 46, 0.12);
-  box-shadow: 0px 3px 30px 4px rgba(46, 46, 46, 0.12); }
+  background: transparent;
+  -webkit-box-shadow0: 0px 3px 30px 4px rgba(46, 46, 46, 0.12);
+  box-shadow0: 0px 3px 30px 4px rgba(46, 46, 46, 0.12); }
 .top-line .lang-wrap ul li a {
   display: inline-block;
   padding: 5px 10px;
