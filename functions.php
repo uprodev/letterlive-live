@@ -9,6 +9,7 @@ function load_style_script(){
 	wp_enqueue_style('my-fancybox', get_stylesheet_directory_uri() . '/css/jquery.fancybox.min.css');
 	wp_enqueue_style('my-nice-select', get_stylesheet_directory_uri() . '/css/nice-select.css');
 	wp_enqueue_style('my-swiper', get_stylesheet_directory_uri() . '/css/swiper.min.css');
+	wp_enqueue_style('my-simplyCountdown', get_stylesheet_directory_uri() . '/css/simplyCountdown.theme.default.css');
 	wp_enqueue_style('my-styles', get_stylesheet_directory_uri() . '/css/styles.css', array(), time());
 	wp_enqueue_style('my-responsive', get_stylesheet_directory_uri() . '/css/responsive.css', array(), time());
 	wp_enqueue_style('my-style-main', get_stylesheet_directory_uri() . '/style.css', array(), time());
@@ -19,11 +20,17 @@ function load_style_script(){
 	wp_enqueue_script('my-nice-select', get_stylesheet_directory_uri() . '/js/jquery.nice-select.min.js', array(), false, true);
 	wp_enqueue_script('my-cuttr', get_stylesheet_directory_uri() . '/js/cuttr.min.js', array(), false, true);
 	wp_enqueue_script('my-sticky', get_stylesheet_directory_uri() . '/js/jquery.sticky.js', array(), false, true);
+	wp_enqueue_script('my-simplyCountdown', get_stylesheet_directory_uri() . '/js/simplyCountdown.min.js', array(), false, true);
 	wp_enqueue_script('my-script', get_stylesheet_directory_uri() . '/js/script.js', array(), time(), true);
 	wp_enqueue_script('my-add', get_stylesheet_directory_uri() . '/js/add.js', array(), time(), true);
 
 	$my_script = array(
 		'copied_text' => get_field('copied_p', 'option'),
+		'web_year' => date('Y', strtotime(get_field('date', get_field('webinar_1')->ID ?: ''))),
+		'web_month' => date('n', strtotime(get_field('date', get_field('webinar_1')->ID ?: ''))),
+		'web_day' => date('j', strtotime(get_field('date', get_field('webinar_1')->ID ?: ''))),
+		'web_hour' => date('H', strtotime(get_field('date', get_field('webinar_1')->ID ?: ''))),
+		'web_minute' => date('i', strtotime(get_field('date', get_field('webinar_1')->ID ?: ''))),
 	);
 	wp_localize_script('my-script', 'php_vars_script', $my_script);
 

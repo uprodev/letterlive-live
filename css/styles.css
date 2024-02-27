@@ -2260,4 +2260,510 @@ figure img{
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+
+
+/*------NEW-22-02-24------*/
+.banner-webinar {
+  padding: 47px 0; }
+.banner-webinar .title {
+  font-size: 30px;
+  line-height: 120%;
+  font-weight: 600;
+  margin-bottom: 18px;
+  letter-spacing: -1px; }
+.banner-webinar .bg-img-mob {
+  display: nonr; }
+.banner-webinar .content {
+  position: relative; }
+.banner-webinar .bg {
+  border-radius: 10px; }
+.banner-webinar .bg .bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center; }
+.banner-webinar .bg .img {
+  position: absolute;
+  right: -30px;
+  bottom: -40px; }
+.banner-webinar .content-width {
+  padding: 0 150px; }
+.banner-webinar .wrap {
+  position: relative;
+  z-index: 3;
+  padding: 40px 52px 35px;
+  max-width: 570px; }
+.banner-webinar .timer {
+  position: absolute;
+  top: -30px;
+  right: 40px;
+  border-radius: 5px;
+  background: #F6E6E6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 10; }
+.banner-webinar .timer .simply-section {
+  width: 67px;
+  padding: 8px 0; }
+.banner-webinar .timer .simply-section > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+.banner-webinar .timer .simply-amount {
+  font-size: 17px;
+  text-align: center;
+  margin-bottom: 1px;
+  font-weight: 700;
+  line-height: normal; }
+.banner-webinar .timer .simply-word {
+  font-size: 14px;
+  line-height: normal;
+  font-weight: 400;
+  margin-bottom: 3px;
+  text-align: center; }
+.banner-webinar h1 {
+  font-size: 38px;
+  line-height: normal;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0; }
+.banner-webinar .text-wrap {
+  margin-bottom: 18px; }
+.banner-webinar .text-wrap p {
+  display: none;
+  font-size: 20px;
+  color: #fff;
+  line-height: 29px; }
+.banner-webinar .text-wrap p a {
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  color: #fff;
+  line-height: 29px; }
+.banner-webinar .text-wrap p a:after {
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  content: '';
+  height: 1px;
+  background: #fff;
+  width: 100%;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease; }
+.banner-webinar .text-wrap p a:hover:after {
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0); }
+.banner-webinar .text-wrap p:first-child {
+  display: inline; }
+.banner-webinar .list-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 12px; }
+.banner-webinar .list-info li {
+  width: 48%;
+  padding-left: 25px;
+  position: relative;
+  margin-bottom: 10px; }
+.banner-webinar .list-info li img {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  left: 0; }
+.banner-webinar .list-info li p {
+  font-size: 17px;
+  line-height: 150%;
+  color: #fff;
+  display: inline-block;
+  font-weight: 600; }
+.banner-webinar .list-info li .old {
+  font-weight: 300;
+  position: relative;
+  margin-left: 10px; }
+.banner-webinar .list-info li .old:after {
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  right: -2px;
+  content: '';
+  height: 1px;
+  background: #fff; }
+
+.webinar-2x {
+  padding: 43px 0 118px; }
+.webinar-2x .content-width {
+  padding: 0 150px; }
+.webinar-2x .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  grid-gap: 67px 0; }
+.webinar-2x .item {
+  width: 48.5%; }
+.webinar-2x .item figure {
+  position: relative;
+  height: 190px; }
+.webinar-2x .item figure .bg {
+  border-radius: 10px 10px 0 0; }
+.webinar-2x .item figure .bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: cover;
+  object-fit: cover; }
+.webinar-2x .item figure .people {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 3; }
+.webinar-2x .item figure .info {
+  position: absolute;
+  bottom: 28px;
+  left: 30px;
+  z-index: 3;
+  width: 200px; }
+.webinar-2x .item figure .info p {
+  font-size: 19px;
+  line-height: 25px;
+  color: #fff;
+  font-weight: 400; }
+.webinar-2x .item figure .info .name {
+  font-weight: 700;
+  margin-bottom: 5px; }
+.webinar-2x .item .text-wrap {
+  padding: 20px 0 0; }
+.webinar-2x .item .text-wrap .title {
+  font-size: 19px;
+  line-height: 25px;
+  font-weight: 700;
+  margin-bottom: 10px; }
+.webinar-2x .item .text-wrap p {
+  font-size: 16px;
+  line-height: 23px;
+  margin-bottom: 19px; }
+.webinar-2x .item .text-wrap ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  grid-gap: 5px 24px; }
+.webinar-2x .item .text-wrap ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+.webinar-2x .item .text-wrap ul li img {
+  vertical-align: top;
+  margin-right: 9px;
+  position: relative;
+  top: -1px; }
+.webinar-2x .item .text-wrap ul li p {
+  margin: 0 !important;
+  font-size: 17px;
+  line-height: 150%;
+  font-weight: 600; }
+.webinar-2x .item .text-wrap .btn-wrap {
+  margin-top: 26px; }
+.webinar-2x .item .text-wrap .btn-wrap a {
+  padding: 0 20px;
+  min-width: 152px; }
+
+.recorded-webinars {
+  position: relative;
+  padding: 72px 0 90px; }
+.recorded-webinars > .bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center; }
+.recorded-webinars .title-h3 {
+  font-size: 30px;
+  line-height: 120%;
+  margin-bottom: 27px;
+  letter-spacing: -1px; }
+.recorded-webinars .btn-wrap a {
+  background: transparent;
+  color: #000;
+  border: 1px solid #000; }
+.recorded-webinars .btn-wrap a img {
+  margin-right: 10px;
+  vertical-align: baseline;
+  position: relative;
+  top: 0px; }
+.recorded-webinars .btn-wrap a:hover {
+  background: #000;
+  color: #fff; }
+.recorded-webinars .btn-wrap a:hover img {
+  -webkit-filter: invert(1);
+  filter: invert(1); }
+.recorded-webinars .item figure .user {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  border-radius: 100%;
+  width: 156px;
+  height: 156px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center; }
+.recorded-webinars .info-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 15px 30px;
+  border-left: 5px solid #9580E6;
+  background: #fff;
+  height: 108px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%; }
+.recorded-webinars .info-block .btn {
+  width: 175px; }
+.recorded-webinars .info-block .btn a {
+  width: 100%;
+  padding: 0 20px; }
+.recorded-webinars .info-block .text-info {
+  width: calc(100% - 200px); }
+.recorded-webinars .info-block .text-info p {
+  font-size: 22px;
+  line-height: normal; }
+.recorded-webinars .info-block .text-info p b {
+  font-weight: 700; }
+.recorded-webinars .content-bottom {
+  margin-top: 72px; }
+
+.subscribe {
+  padding: 80px 0; }
+.subscribe .content {
+  width: 500px;
+  max-width: 100%;
+  margin: auto; }
+.subscribe .title-h3 {
+  text-align: center;
+  font-size: 32px;
+  line-height: 120%;
+  margin-bottom: 38px;
+  letter-spacing: -1px; }
+.subscribe ul {
+  padding-left: 10px;
+  margin-bottom: 67px; }
+.subscribe ul li {
+  list-style: disc;
+  margin-bottom: 18px;
+  line-height: 22px; }
+.subscribe .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 430px;
+  max-width: 100%;
+  margin: auto; }
+.subscribe .form .input-wrap {
+  width: calc(100% - 135px); }
+.subscribe .form label {
+  display: none; }
+.subscribe .form input {
+  width: 100%;
+  height: 54px;
+  line-height: 52px;
+  border-radius: 30px;
+  padding: 0 20px;
+  font-size: 17px;
+  color: #000;
+  outline: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.3); }
+.subscribe .form .btn-default {
+  width: 128px;
+  padding: 0 20px; }
+
+.simply-seconds-section {
+  display: none; }
+
+.banner-webinar-all .text-wrap p {
+  display: block; }
+
+.banner-webinar-all {
+  padding-top: 95px; }
+
+.webinar-big {
+  padding: 20px 0 50px; }
+.webinar-big .title-h3 {
+  font-size: 30px;
+  line-height: 120%;
+  letter-spacing: -1px;
+  margin-bottom: 35px; }
+.webinar-big .content {
+  padding: 0 150px; }
+.webinar-big .item {
+  position: relative;
+  margin-bottom: 50px; }
+.webinar-big .item .bg {
+  border-radius: 10px; }
+.webinar-big .item .bg .bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: cover;
+  object-fit: cover; }
+.webinar-big .item .bg .bg-img-mob {
+  display: none; }
+.webinar-big .item .bg .user {
+  position: absolute;
+  bottom: -1px;
+  right: 42px; }
+.webinar-big .item .wrap {
+  position: relative;
+  z-index: 3;
+  padding: 49px 50px 37px;
+  width: 700px; }
+.webinar-big .item .wrap .title {
+  font-size: 38px;
+  line-height: normal;
+  margin-bottom: 7px;
+  color: #fff;
+  font-weight: 700; }
+.webinar-big .item .wrap p {
+  color: #fff;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 27px; }
+.webinar-big .item .wrap ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 23px;
+  width: 470px;
+  max-width: 100%; }
+.webinar-big .item .wrap ul li {
+  width: 48%;
+  padding-left: 25px;
+  position: relative;
+  margin-bottom: 10px; }
+.webinar-big .item .wrap ul li img {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  left: 0; }
+.webinar-big .item .wrap ul li p {
+  font-size: 17px;
+  line-height: 150%;
+  color: #fff;
+  display: inline-block;
+  font-weight: 400;
+  margin-bottom: 0 !important; }
+.webinar-big .item .wrap ul li .old {
+  font-weight: 300;
+  position: relative;
+  margin-left: 10px; }
+.webinar-big .item .wrap ul li .old:after {
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  right: -2px;
+  content: '';
+  height: 1px;
+  background: #fff; }
+.webinar-big .btn-wrap a {
+  background: #fff;
+  color: #000; }
+.webinar-big .btn-wrap a:hover {
+  background: #000;
+  color: #fff; }
+
+.webinar-2x .mob-read {
+  display: none; }
+
+.recorded-webinars .content-width {
+  position: relative; }
+.recorded-webinars .link-wrap {
+  position: absolute;
+  top: 15px;
+  right: 150px; }
+.recorded-webinars .link-wrap a {
+  display: inline-block;
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #000;
+  position: relative; }
+.recorded-webinars .link-wrap a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  height: 1px;
+  background: #000;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  width: 100%; }
+.recorded-webinars .link-wrap a:hover:after {
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0); }
+
+.subscribe .form input{
+  width: calc(100% - 135px);
+}
+
 /*# sourceMappingURL=styles.css.map */

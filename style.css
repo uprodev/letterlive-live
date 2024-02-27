@@ -1,7 +1,16 @@
 /*   
 Theme Name: Letterlife
 */
-
+.faq-block{
+	background-size: cover!important;
+	background-position: center!important;
+}
+.coaching-defult{
+	min-height: 700px;
+}
+.coaching-defult .bg{
+	bottom: 0!important;
+}
 .mc4wp-form-fields{
   width: 100%;
   display: flex;

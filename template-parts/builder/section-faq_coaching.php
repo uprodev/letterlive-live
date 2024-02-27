@@ -3,7 +3,7 @@ if($args['row']):
 	foreach($args['row'] as $key=>$arg) $$key = $arg; ?>
 
 	<?php if ($items): ?>
-		<section class="faq-block">
+		<section class="faq-block"<?php if($background) echo ' style="background-image:url(' . $background['url'] . ');"' ?>>
 			<div class="content-width">
 				<div class="content">
 

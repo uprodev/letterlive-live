@@ -2,7 +2,7 @@
 if($args['row']):
 	foreach($args['row'] as $key=>$arg) $$key = $arg; ?>
 
-	<section class="coaching-block">
+	<section class="coaching-block<?php if($is_correct_height) echo ' coaching-defult' ?>">
 
 		<?php if ($background || $background_mobile): ?>
 			<div class="bg">
@@ -31,44 +31,47 @@ if($args['row']):
 					</div>
 				<?php endif ?>
 
-				<div class="rating">
+				<?php if ($rating || $testimonials): ?>
+					<div class="rating">
 
-					<?php if ($rating): ?>
+						<?php if ($rating): ?>
 
-						<?php $rating_floor = floor($rating) ?>
+							<?php $rating_floor = floor($rating) ?>
 
-						<div class="stars-wrap">
+							<div class="stars-wrap">
 
-							<?php for ($i = 0; $i < $rating_floor; $i++) { ?>
-								<img src="<?= get_stylesheet_directory_uri() ?>/img/star-full.svg" alt="">
-							<?php } ?>
+								<?php for ($i = 0; $i < $rating_floor; $i++) { ?>
+									<img src="<?= get_stylesheet_directory_uri() ?>/img/star-full.svg" alt="">
+								<?php } ?>
 
-							<?php if ($rating > $rating_floor): ?>
-								<img src="<?= get_stylesheet_directory_uri() ?>/img/star.svg" alt="">
-							<?php endif ?>
-							
-							<p><?= $rating ?> <?php _e('Rating', 'Letterlife') ?></p>
-						</div>
-					<?php endif ?>
-					
-					<?php if ($testimonials): ?>
-						<?php foreach ($testimonials as $item): ?>
-							<?php if ($item['text']): ?>
-								<div class="item">
-									<p>
-										<i><?= $item['text'] ?></i>
+								<?php if ($rating > $rating_floor): ?>
+									<img src="<?= get_stylesheet_directory_uri() ?>/img/star.svg" alt="">
+								<?php endif ?>
 
-										<?php if ($item['name']): ?>
-											<b><?= $item['name'] ?></b>
-										<?php endif ?>
-										
-									</p>
-								</div>
-							<?php endif ?>
-						<?php endforeach ?>
-					<?php endif ?>
-					
-				</div>
+								<p><?= $rating ?> <?php _e('Rating', 'Letterlife') ?></p>
+							</div>
+						<?php endif ?>
+
+						<?php if ($testimonials): ?>
+							<?php foreach ($testimonials as $item): ?>
+								<?php if ($item['text']): ?>
+									<div class="item">
+										<p>
+											<i><?= $item['text'] ?></i>
+
+											<?php if ($item['name']): ?>
+												<b><?= $item['name'] ?></b>
+											<?php endif ?>
+
+										</p>
+									</div>
+								<?php endif ?>
+							<?php endforeach ?>
+						<?php endif ?>
+
+					</div>
+				<?php endif ?>
+				
 			</div>
 		</div>
 	</section>
