@@ -29,33 +29,34 @@ Template Name: Webinars
 						<?= wp_get_attachment_image($field['ID'], 'full', false, array('class' => 'bg-img-mob')) ?>
 					<?php endif ?>
 
-					<?php if (has_post_thumbnail($webinar->ID)): ?>
-						<?= get_the_post_thumbnail($webinar->ID, 'full', 'class=img') ?>
+					<?php if ($field = get_field('people_image', $webinar->ID)): ?>
+						<?= wp_get_attachment_image($field['ID'], 'full', false, array('class' => 'img')) ?>
 					<?php endif ?>
 
 				</div>
-				<div class="timer"></div>
+				
+				<?php if ($field = get_field('date', $webinar->ID)): ?>
+					<div class="timer"></div>
+				<?php endif ?>
+				
 				<div class="wrap">
 					<h1><?= get_the_title($webinar->ID) ?></h1>
 					<div class="text-wrap">
 
-						<?php if (has_excerpt($webinar->ID)): ?>
+						<?php if ($field = get_field('excerpt', $webinar->ID)): ?>
 							<p>
-								<?= get_the_excerpt($webinar->ID) ?>
-								<a href="#" class="read-more">Read more</a>
+								<?= $field ?>
+								<a href="#" class="read-more"><?php _e('Read more', 'Letterlife') ?></a>
 							</p>
 						<?php endif ?>
 						
 						<?= get_the_content(null, false, $webinar->ID) ?>
 					</div>
 					<ul class="list-info">
-
-						<?php if ($field = get_field('date', $webinar->ID)): ?>
-							<li>
-								<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-11-1.svg" alt="">
-								<p><?= date('M d', strtotime($field)) ?></p>
-							</li>
-						<?php endif ?>
+						<li>
+							<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-11-1.svg" alt="">
+							<p><?= ($field = get_field('date', $webinar->ID)) ? date('M d', strtotime($field)) : (get_field('tba_date_text', $webinar->ID) ?: __('TBA', 'Letterlife')) ?></p>
+						</li>
 
 						<?php if ($field = get_field('language', $webinar->ID)): ?>
 							<li>
@@ -64,14 +65,11 @@ Template Name: Webinars
 							</li>
 						<?php endif ?>
 
-						<?php if (get_field('date', $webinar->ID) || get_field('duration', $webinar->ID)): ?>
 						<li>
 							<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-11-3.svg" alt="">
 							<p>
 
-								<?php if ($field = get_field('date', $webinar->ID)): ?>
-									<?= date('H:i', strtotime($field)) . ' ' . __('CET', 'Letterlife') . ', ' ?>
-								<?php endif ?>
+								<?= ($field = get_field('date', $webinar->ID)) ? date('H:i', strtotime($field)) . ' ' . __('CET', 'Letterlife') . ', ' : (get_field('tba_time_text') ?: __('TBA', 'Letterlife')) ?>
 
 								<?php if ($field = get_field('duration', $webinar->ID)): ?>
 									<?= $field ?>
@@ -79,29 +77,32 @@ Template Name: Webinars
 
 							</p>
 						</li>
+
+						<?php if ($field = get_field('new_price', $webinar->ID)): ?>
+							<li>
+								<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-11-4.svg" alt="">
+								<p><?= $field ?></p>
+
+								<?php if (get_field('old_price', $webinar->ID)): ?>
+									<p class="old"><?= get_field('old_price', $webinar->ID) ?></p>
+								<?php endif ?>
+
+							</li>
+						<?php endif ?>
+
+					</ul>
+
+					<?php if ($field = get_field('link', $webinar->ID)): ?>
+						<div class="btn-wrap">
+							<a href="<?= $field['url'] ?>" class="btn-default btn-big"<?php if($field['target']) echo ' target="_blank"' ?>><?= $field['title'] ?></a>
+						</div>
 					<?php endif ?>
 
-					<?php if ($field = get_field('new_price', $webinar->ID)): ?>
-						<li>
-							<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-11-4.svg" alt="">
-							<p><?= $field ?></p>
-
-							<?php if (get_field('old_price', $webinar->ID)): ?>
-								<p class="old"><?= get_field('old_price', $webinar->ID) ?></p>
-							<?php endif ?>
-
-						</li>
-					<?php endif ?>
-
-				</ul>
-				<div class="btn-wrap">
-					<a href="<?= get_field('date', $webinar->ID) ? get_permalink($webinar->ID) : $register_page_url ?>" class="btn-default btn-big"><?= get_field('date', $webinar->ID) ? __('Register', 'Letterlife') : __('Get notified', 'Letterlife') ?></a>
 				</div>
 			</div>
-		</div>
-	<?php endif ?>
+		<?php endif ?>
 
-</div>
+	</div>
 </section>
 <?php endif ?>
 
@@ -123,7 +124,7 @@ Template Name: Webinars
 					?>
 
 					<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
-						<?php get_template_part('parts/content', 'webinar', ['register_page_url' => $register_page_url]) ?>
+						<?php get_template_part('parts/content', 'webinar') ?>
 					<?php endwhile; ?>
 
 					<?php 
@@ -137,7 +138,7 @@ Template Name: Webinars
 
 					global $post;
 					setup_postdata($post); ?>
-					<?php get_template_part('parts/content', 'webinar', ['register_page_url' => $register_page_url]) ?>
+					<?php get_template_part('parts/content', 'webinar') ?>
 				<?php endforeach; ?>
 
 				<?php wp_reset_postdata(); ?>

@@ -18,18 +18,22 @@ $register_page_url = get_field('webinar_register_page_w', 'option') ?: get_perma
 					<?= wp_get_attachment_image($field['ID'], 'full', false, array('class' => 'bg-img-mob')) ?>
 				<?php endif ?>
 
-				<?php if (has_post_thumbnail()): ?>
-					<?php the_post_thumbnail('full', 'class=img') ?>
+				<?php if ($field = get_field('people_image')): ?>
+					<?= wp_get_attachment_image($field['ID'], 'full', false, array('class' => 'img')) ?>
 				<?php endif ?>
 
 			</div>
-			<div class="timer"></div>
+
+			<?php if ($field = get_field('date')): ?>
+				<div class="timer"></div>
+			<?php endif ?>
+			
 			<div class="wrap">
 				<h1><?php the_title() ?></h1>
 				<div class="text-wrap">
 
-					<?php if (has_excerpt()): ?>
-						<p><?php the_excerpt() ?></p>
+					<?php if ($field = get_field('excerpt')): ?>
+						<p><?= $field ?></p>
 					<?php endif ?>
 					
 					<?php the_content() ?>
@@ -80,9 +84,13 @@ $register_page_url = get_field('webinar_register_page_w', 'option') ?: get_perma
 				<?php endif ?>
 
 			</ul>
-			<div class="btn-wrap">
-				<a href="<?= get_field('date') ? get_permalink($webinar->ID) : $register_page_url ?>" class="btn-default btn-big"><?= get_field('date') ? __('Register', 'Letterlife') : __('Get notified', 'Letterlife') ?></a>
-			</div>
+
+			<?php if ($field = get_field('link')): ?>
+				<div class="btn-wrap">
+					<a href="<?= $field['url'] ?>" class="btn-default btn-big"<?php if($field['target']) echo ' target="_blank"' ?>><?= $field['title'] ?></a>
+				</div>
+			<?php endif ?>
+
 		</div>
 	</div>
 </div>

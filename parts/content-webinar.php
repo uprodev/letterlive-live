@@ -1,8 +1,3 @@
-<?php 
-$permalink = get_field('date') ? get_the_permalink() : $args['register_page_url']; 
-$link_text = get_field('date') ? __('Register', 'Letterlife') : __('Get notified', 'Letterlife');
-?>
-
 <div class="item <?php if(get_field('hide_content_on_mobile')) echo ' item-hide-mob' ?>">
 	<figure>
 
@@ -12,10 +7,10 @@ $link_text = get_field('date') ? __('Register', 'Letterlife') : __('Get notified
 			</div>
 		<?php endif ?>
 		
-		<?php if (has_post_thumbnail()): ?>
-			<?php the_post_thumbnail('full', 'class=people') ?>
+		<?php if ($field = get_field('people_image')): ?>
+			<?= wp_get_attachment_image($field['ID'], 'full', false, array('class' => 'people')) ?>
 		<?php endif ?>
-		
+
 		<?php if (get_field('name') || get_field('position')): ?>
 		<div class="info">
 
@@ -42,22 +37,15 @@ $link_text = get_field('date') ? __('Register', 'Letterlife') : __('Get notified
 	<?php endif ?>
 	
 	<ul class="list-info">
-
-		<?php if ($field = get_field('date')): ?>
-			<li>
-				<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-12-1.svg" alt="">
-				<p><?= date('F d', strtotime($field)) ?></p>
-			</li>
-		<?php endif ?>
-
-		<?php if (get_field('date') || get_field('duration')): ?>
+		<li>
+			<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-12-1.svg" alt="">
+			<p><?= ($field = get_field('date')) ? date('F d', strtotime($field)) : (get_field('tba_date_text') ?: __('TBA', 'Letterlife')) ?></p>
+		</li>
 		<li>
 			<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-12-2.svg" alt="">
 			<p>
 
-				<?php if ($field = get_field('date')): ?>
-					<?= date('H:i', strtotime($field)) . ' ' . __('CET', 'Letterlife') . ', ' ?>
-				<?php endif ?>
+				<?= ($field = get_field('date')) ? date('H:i', strtotime($field)) . ' ' . __('CET', 'Letterlife') . ', ' : (get_field('tba_time_text') ?: __('TBA', 'Letterlife')) ?>
 
 				<?php if ($field = get_field('duration')): ?>
 					<?= $field ?>
@@ -65,18 +53,21 @@ $link_text = get_field('date') ? __('Register', 'Letterlife') : __('Get notified
 
 			</p>
 		</li>
+
+		<?php if ($field = get_field('language')): ?>
+			<li>
+				<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-12-3.svg" alt="">
+				<p><?= $field ?></p>
+			</li>
+		<?php endif ?>
+
+	</ul>
+
+	<?php if ($field = get_field('link')): ?>
+		<div class="btn-wrap">
+			<a href="<?= $field['url'] ?>" class="btn-default btn-big"<?php if($field['target']) echo ' target="_blank"' ?>><?= $field['title'] ?></a>
+		</div>
 	<?php endif ?>
 
-	<?php if ($field = get_field('language')): ?>
-		<li>
-			<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-12-3.svg" alt="">
-			<p><?= $field ?></p>
-		</li>
-	<?php endif ?>
-
-</ul>
-<div class="btn-wrap">
-	<a href="<?= $permalink ?>" class="btn-default btn-big"><?= $link_text ?></a>
-</div>
 </div>
 </div>

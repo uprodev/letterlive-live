@@ -1,6 +1,17 @@
 /*   
 Theme Name: Letterlife
 */
+.webinar-big .item .wrap ul{
+  width: 100%;
+}
+.banner-webinar .bg .img, .webinar-big .item .bg .user{
+  height: auto;
+  width: auto;
+  max-width: 610px;
+}
+.webinar-big .item .bg .user{
+  max-width: 400px;
+}
 .faq-block{
 	background-size: cover!important;
 	background-position: center!important;
@@ -206,6 +217,14 @@ Theme Name: Letterlife
     font-size: 40px;
   }
 }
+@media (max-width: 991px){
+  .banner-webinar .bg .img{
+    max-width: 400px;
+  }
+  .webinar-big .item .wrap ul li{
+    width: 100%;
+  }
+}
 
 @media (max-width: 767px){
   .old-site li.avatar {
@@ -219,6 +238,9 @@ Theme Name: Letterlife
     font-size: 24px;
     line-height: 1.25;
     margin-bottom: 10px;
+  }
+  .banner-webinar .bg .img{
+    max-width: 100%;
   }
 }
 
@@ -234,5 +256,16 @@ Theme Name: Letterlife
   }
   .terms h1{
     margin-top: 40px;
+  }
+  .banner-webinar .bg .bg-img{
+    display: block;
+  }
+  .webinar-big .item .bg .bg-img{
+    display: block;
+  }
+  .banner-webinar .bg .img {
+    max-width: 1000%;
+    min-height: 270px;
+    width: auto;
   }
 }

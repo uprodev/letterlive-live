@@ -15,9 +15,13 @@ $from = is_singular('webinar') && !get_field('get_webinars_from_page_3') ? get_t
 				<h2 class="title-h3"><?= $field ?></h2>
 			<?php endif ?>
 
-			<div class="link-wrap">
-				<a href="<?= $args['register_page_url'] ?>"><?php _e('See all', 'Letterlife') ?></a>
-			</div>
+
+			<?php if ($field = get_field('recorded_webinars_link_w', 'option')): ?>
+				<div class="link-wrap">
+					<a href="<?= $field['url'] ?>"<?php if($field['target']) echo ' target="_blank"' ?>><?= $field['title'] ?></a>
+				</div>
+			<?php endif ?>
+
 			<div class="content">
 
 				<?php while(have_rows('items_3', $from)): the_row() ?>
@@ -70,9 +74,12 @@ $from = is_singular('webinar') && !get_field('get_webinars_from_page_3') ? get_t
 								</ul>
 							<?php endif ?>
 
-							<div class="btn-wrap">
-								<a href="<?= $args['register_page_url'] ?>" class="btn-default btn-big btn-border"><img src="<?= get_stylesheet_directory_uri() ?>/img/icon-13.svg" alt=""><?php _e('Watch', 'Letterlife') ?></a>
-							</div>
+							<?php if ($field = get_sub_field('link')): ?>
+								<div class="btn-wrap">
+									<a href="<?= $field['url'] ?>" class="btn-default btn-big btn-border"<?php if($field['target']) echo ' target="_blank"' ?>><img src="<?= get_stylesheet_directory_uri() ?>/img/icon-13.svg" alt=""><?= $field['title'] ?></a>
+								</div>
+							<?php endif ?>
+
 						</div>
 					</div>
 
@@ -100,4 +107,4 @@ $from = is_singular('webinar') && !get_field('get_webinars_from_page_3') ? get_t
 		</div>
 	</section>
 
-<?php endif ?>
+	<?php endif ?>

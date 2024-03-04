@@ -2272,7 +2272,7 @@ figure img{
   margin-bottom: 18px;
   letter-spacing: -1px; }
 .banner-webinar .bg-img-mob {
-  display: nonr; }
+  display: none; }
 .banner-webinar .content {
   position: relative; }
 .banner-webinar .bg {
@@ -2296,7 +2296,7 @@ figure img{
 .banner-webinar .wrap {
   position: relative;
   z-index: 3;
-  padding: 40px 52px 35px;
+  padding: 40px 5px 35px 52px;
   max-width: 570px; }
 .banner-webinar .timer {
   position: absolute;
@@ -2389,10 +2389,13 @@ figure img{
   flex-wrap: wrap;
   margin-bottom: 12px; }
 .banner-webinar .list-info li {
-  width: 48%;
+  width: 53%;
   padding-left: 25px;
   position: relative;
   margin-bottom: 10px; }
+.banner-webinar .list-info li:first-child, .banner-webinar .list-info li:nth-child(3){
+  width: 47%;
+}
 .banner-webinar .list-info li img {
   position: absolute;
   top: 50%;
